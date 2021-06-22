@@ -4,12 +4,19 @@ import googleImg from '../assets/images/google-icon.svg';
 import { useHistory } from 'react-router';
 import { Button } from '../components/Button';
 import '../assets/styles/auth.scss';
+import { auth, firebase } from '../services/firebase'; 
 
 export const Home = () => {
   const history = useHistory();
 
-  const navigateToNewRoom = () => {
-    history.push('/rooms/new');
+  const handleCreateRoom = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+
+    auth.signInWithPopup(provider).then(result => {
+      console.log(result);
+      history.push('/rooms/new');
+    })
+
   };
 
   return (
@@ -22,7 +29,7 @@ export const Home = () => {
     <main>
       <div className="main-content">
         <img src={logoImg} alt="Letmeask logo" />
-        <button type="submit" onClick={navigateToNewRoom} className="create-room">
+        <button type="submit" onClick={handleCreateRoom} className="create-room">
           <img src={googleImg} alt="Google logo" />
           Create your room with Google
         </button>

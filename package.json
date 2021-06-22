@@ -29,7 +29,7 @@
     "stylelint-config-standard": "21.x",
     "stylelint-csstree-validator": "1.x",
     "stylelint-scss": "3.x",
-    "typescript": "^4.1.2",
+    "typescript": "^4.3.4",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -55,5 +55,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0"
   }
 }

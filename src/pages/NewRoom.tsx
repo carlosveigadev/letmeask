@@ -1,6 +1,6 @@
 import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
-import googleImg from '../assets/images/google-icon.svg';
+import { Link } from 'react-router-dom';
 import { Button } from '../components/Button';
 import '../assets/styles/auth.scss';
 
@@ -26,7 +26,7 @@ export const NewRoom = () => (
         </form>
         <p>
           Do you want to join an existing room?  
-          <a href="#">Click here</a>
+          <Link to="/">Click here</Link>
         </p>
       </div>
     </main>

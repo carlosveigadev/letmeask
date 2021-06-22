@@ -1,6 +1,7 @@
 import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
 import googleImg from '../assets/images/google-icon.svg';
+import { Button } from '../components/Button';
 import '../assets/styles/auth.scss';
 
 export const Home = () => (
@@ -23,9 +24,9 @@ export const Home = () => (
             type="text"
             placeholder="Type the room code"
           />
-          <button type="submit">
+          <Button type="submit">
             Join the room
-          </button>
+          </Button>
         </form>
       </div>
     </main>

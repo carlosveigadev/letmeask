@@ -13,7 +13,7 @@ export const Home = () => (
     <main>
       <div className="main-content">
         <img src={logoImg} alt="Letmeask logo" />
-        <button type="submit">
+        <button type="submit" className="create-room">
           <img src={googleImg} alt="Google logo" />
           Create your room with Google
         </button>

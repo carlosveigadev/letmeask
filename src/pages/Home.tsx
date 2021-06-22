@@ -6,7 +6,7 @@ import { Button } from '../components/Button';
 import '../assets/styles/auth.scss';
 import { useAuth } from '../hooks/useAuth';
 
-export const Home = () => {
+export const Home = (): JSX.Element => {
   const history = useHistory();
   const { user, signInWithGoogle } = useAuth();
 

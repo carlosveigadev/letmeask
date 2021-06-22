@@ -5,7 +5,7 @@ import { Button } from '../components/Button';
 import '../assets/styles/auth.scss';
 // import { useAuth } from '../hooks/useAuth';
 
-export const NewRoom = () => {
+export const NewRoom = (): JSX.Element => {
   // const { user } = useAuth();
   return (
   <div id="page-auth">

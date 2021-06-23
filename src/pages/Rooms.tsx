@@ -1,5 +1,6 @@
-import logoImg from '../assets/images/logo.svg'
-import { Button } from '../components/Button'
+import logoImg from '../assets/images/logo.svg';
+import { Button } from '../components/Button';
+import '../assets/styles/rooms.scss';
 
 export const Room = (): JSX.Element => {
   return (
@@ -11,7 +12,7 @@ export const Room = (): JSX.Element => {
         </div>
       </header>
 
-      <main className="content">
+      <main>
         <div className="room-title">
           <h1>Room React</h1>
           <span>4 questions</span>

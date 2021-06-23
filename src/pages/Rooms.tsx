@@ -9,7 +9,7 @@ export const Room = (): JSX.Element => {
       <header>
         <div className="content">
           <img src={logoImg} alt="Letmeask logo" />
-          <RoomCode /> 
+          <RoomCode code="123123123" /> 
         </div>
       </header>
 

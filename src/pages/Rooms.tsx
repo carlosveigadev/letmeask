@@ -1,11 +1,11 @@
-import logoImg from '../assets/images/logo.svg';
+import { useParams } from 'react-router';
+import { useAuth } from '../hooks/useAuth';
+import { FormEvent, useState } from 'react';
 import { Button } from '../components/Button';
 import { RoomCode } from '../components/RoomCode';
-import { useParams } from 'react-router';
-import '../assets/styles/rooms.scss';
-import { FormEvent, useState } from 'react';
-import { useAuth } from '../hooks/useAuth';
 import { database } from '../services/firebase';
+import logoImg from '../assets/images/logo.svg';
+import '../assets/styles/rooms.scss';
 
 type RoomParams = {
   id: string;
@@ -38,8 +38,10 @@ export const Room = (): JSX.Element => {
       isHighlighted: false, 
       isAnswered: false,
     }
-
+    
     await database.ref(`rooms/${roomId}/questions`).push(question);
+
+    setNewQuestion('');
   }
 
   return (
@@ -65,8 +67,17 @@ export const Room = (): JSX.Element => {
           />
 
           <div className="form-footer">
-            <span>Please <button>login</button> to send a question.</span>
-            <Button type="submit">Send Question</Button>
+            { user ? (
+              <div className="user-info">
+                <img src={user.avatar} alt={user.name}/>
+                <span>{user.name}</span>
+
+              </div>
+            ) : (
+              <span>Please <button>login</button> to send a question.</span>
+            )
+            }
+            <Button type="submit" disabled={!user}>Send Question</Button>
           </div>
         </form>
 

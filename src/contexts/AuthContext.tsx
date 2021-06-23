@@ -18,7 +18,7 @@ type AuthContextProviderProps = {
 
 export const AuthContext = createContext({} as AuthContextType); 
 
-export function AuthContextProvider(props: AuthContextProviderProps) {
+export function AuthContextProvider(props: AuthContextProviderProps): JSX.Element {
   const [user, setUser] = useState<User>();
 
   useEffect(() => {

@@ -7,7 +7,7 @@ import '../assets/styles/auth.scss';
 import { database } from '../services/firebase';
 import { useAuth } from '../hooks/useAuth';
 
-export const NewRoom = (): JSX.Element => {
+export const NewRoom = () => {
   const { user } = useAuth();
   const [newRoom, setNewRoom] = useState('')
   const history = useHistory();

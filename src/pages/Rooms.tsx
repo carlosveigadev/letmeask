@@ -1,5 +1,6 @@
 import logoImg from '../assets/images/logo.svg';
 import { Button } from '../components/Button';
+import { RoomCode } from '../components/RoomCode';
 import '../assets/styles/rooms.scss';
 
 export const Room = (): JSX.Element => {
@@ -8,7 +9,7 @@ export const Room = (): JSX.Element => {
       <header>
         <div className="content">
           <img src={logoImg} alt="Letmeask logo" />
-          <div>room code</div>
+          <RoomCode /> 
         </div>
       </header>
 

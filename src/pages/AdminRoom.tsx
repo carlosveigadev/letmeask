@@ -53,7 +53,7 @@ export const AdminRoom = (): JSX.Element => {
           <img src={logoImg} alt="Letmeask logo" />
           <div>
             <RoomCode code={roomId} /> 
-            <Button>End Room</Button>
+            <Button isOutlined>End Room</Button>
           </div>
         </div>
       </header>

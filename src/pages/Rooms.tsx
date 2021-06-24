@@ -98,7 +98,7 @@ export const Room = (): JSX.Element => {
                 author={question.author}
               >
                 <button 
-                  className="like-button"
+                  className={`like-button ${question.hasLiked ? 'liked' : ''}`}
                   type="button"
                   aria-label="Mark as liked"  
                   onClick={() => handleLikeQuestion(question.id)}

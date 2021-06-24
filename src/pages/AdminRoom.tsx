@@ -1,13 +1,17 @@
 import { useParams } from 'react-router';
 // import { useAuth } from '../hooks/useAuth';
 import { useRoom } from '../hooks/useRoom';
+import { useHistory } from 'react-router-dom';
+
 import { Button } from '../components/Button';
 import { Question } from '../components/Question';
 import { RoomCode } from '../components/RoomCode';
+
 import logoImg from '../assets/images/logo.svg';
 import deleteImg from '../assets/images/delete.svg';
-import '../assets/styles/rooms.scss';
 import { database } from '../services/firebase';
+
+import '../assets/styles/rooms.scss';
 
 
 type RoomParams = {
@@ -16,6 +20,7 @@ type RoomParams = {
 
 export const AdminRoom = (): JSX.Element => {
   // const { user } = useAuth();
+  const history = useHistory();
   const params = useParams<RoomParams>();
   const roomId = params.id;
   const { title, questions } = useRoom(roomId);
@@ -26,6 +31,14 @@ export const AdminRoom = (): JSX.Element => {
     }
   }
 
+  const handleEndRoom = async () => {
+    database.ref(`rooms/${roomId}`).update({
+      endedAt: new Date(),
+    });
+
+    history.push('/');
+  }
+
   return (
     <div id="page-room">
       <header>
@@ -33,7 +46,10 @@ export const AdminRoom = (): JSX.Element => {
           <img src={logoImg} alt="Letmeask logo" />
           <div>
             <RoomCode code={roomId} /> 
-            <Button isOutlined>End Room</Button>
+            <Button 
+              isOutlined
+              onClick={handleEndRoom}
+            >End Room</Button>
           </div>
         </div>
       </header>

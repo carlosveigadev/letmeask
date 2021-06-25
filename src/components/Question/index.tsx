@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import cn from 'classnames';
 import './styles.scss';
 
 type QuestionProps = {
@@ -19,7 +20,13 @@ export const Question = ({
   isHighlighted = false,
   children
 }: QuestionProps): JSX.Element => (
-  <div className={`question ${isAnswered ? 'answered' : ''} ${isHighlighted ? 'highlighted' : ''}`}>
+  <div 
+    className={cn(
+      'question',
+      { answered: isAnswered },
+      { highlighted: isHighlighted},
+    )}
+  >
     <p>{content}</p>
     <footer>
       <div className="user-info">

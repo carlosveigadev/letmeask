@@ -8,14 +8,18 @@ type QuestionProps = {
     avatar: string;
   };
   children?: ReactNode;
+  isAnswered?: boolean;
+  isHighlighted?: boolean;
 }
 
 export const Question = ({
   content, 
   author,
+  isAnswered = false,
+  isHighlighted = false,
   children
 }: QuestionProps): JSX.Element => (
-  <div className="question">
+  <div className={`question ${isAnswered ? 'answered' : ''} ${isHighlighted ? 'highlighted' : ''}`}>
     <p>{content}</p>
     <footer>
       <div className="user-info">

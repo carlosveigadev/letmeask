@@ -24,7 +24,7 @@ export const Question = ({
     className={cn(
       'question',
       { answered: isAnswered },
-      { highlighted: isHighlighted},
+      { highlighted: isHighlighted && !isAnswered},
     )}
   >
     <p>{content}</p>

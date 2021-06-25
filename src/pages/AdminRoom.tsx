@@ -81,19 +81,27 @@ export const AdminRoom = (): JSX.Element => {
                 key={question.id}
                 content={question.content}
                 author={question.author}
+                isAnswered={question.isAnswered}
+                isHighlighted={question.isHighlighted}
               >
-                <button
-                  type="button"
-                  onClick={() => handleCheckQuestionAsAnswered(question.id)}
-                >
-                  <img src={checkImg} alt="Set question as already answered" />
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleHighlightQuestion(question.id)}
-                >
-                  <img src={answerImg} alt="Highlight the question" />
-                </button>
+                {
+                  !question.isAnswered && (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() => handleCheckQuestionAsAnswered(question.id)}
+                      >
+                        <img src={checkImg} alt="Set question as already answered" />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => handleHighlightQuestion(question.id)}
+                      >
+                        <img src={answerImg} alt="Highlight the question" />
+                      </button>
+                    </>
+                  )
+                }
                 <button
                   type="button"
                   onClick={() => handleDeleteQuestion(question.id)}

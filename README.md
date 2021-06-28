@@ -1,11 +1,13 @@
 # **Let me Ask**
 
-This is a project developed at NWL 6, where is learned react and firebase to develop a website for streamers to create rooms where you are able to answer your audience's questions in real-time
+This is a project developed at NWL 6, where is learned react and firebase to develop a website for streamers to create rooms where you are able to answer your audience's questions in real-time.
+
+The main objective of this project was to improve the use of TypeScript, React and Firebase. I also used custom hooks and added proper linters for the project.
 
 ## **Built With**
 - React
-- Custom Hooks
-- Firebase
+- Google Authentication
+- Firebase (Database and Deploy)
 
 ## **Examples**
 You can access the project here:
@@ -23,9 +25,8 @@ You can access the project here:
  
 ## **Getting Started**
  
-This application is the front-end used with the project [Find My Wod - Back-end](https://github.com/carlosveigadev/find-my-wod-backend)
 Clone the repository by clicking on "Clone or Download" and copy the given link. In your terminal, go to the folder where you want the project to be and use the following command:
-`git clone https://github.com/carlosveigadev/find-my-wod-frontend.git`
+`git clone https://github.com/carlosveigadev/letmeask.git`
 After that, open the folder with the code editor of your choice and follow the steps below.
 ## **Setting up the necessary packages:**
 **Make sure you have [Yarn](https://yarnpkg.com/) installed in your machine.**
@@ -33,10 +34,6 @@ After that, open the folder with the code editor of your choice and follow the s
 `yarn install` <br>
 `yarn start` <br>
 
-### **Warning:**
-If you want to try this project with the back-end project as your localhost, do not forget to update the URL variable inside `src/api-requests/index.js` to the back-end server URL generated (usually localhost:3001)
- 
- 
 **Those commands will ensure you installed the proper packages required and start the server locally, usually at localhost:3000**
 
 ## **Author**

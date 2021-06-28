@@ -1,5 +1,4 @@
 import { useParams } from 'react-router';
-// import { useAuth } from '../hooks/useAuth';
 import { useRoom } from '../hooks/useRoom';
 import { useHistory } from 'react-router-dom';
 
